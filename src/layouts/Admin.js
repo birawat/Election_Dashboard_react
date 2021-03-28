@@ -4,7 +4,6 @@ import { useLocation, Route, Switch } from "react-router-dom";
 
 import Sidebar from "components/Sidebar/Sidebar";
 
-
 import routes from "routes.js";
 
 import sidebarImage from "assets/img/sidebar-3.jpg";
