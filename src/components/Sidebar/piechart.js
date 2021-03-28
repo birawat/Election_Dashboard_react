@@ -6,12 +6,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-class Pie extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
+const Pie = (props) => {
     return (
       <>
         <Col md="4">
@@ -27,7 +22,8 @@ class Pie extends React.Component {
                 <ChartistGraph
                   data={{
                     labels: ["Binod", "Amit", "Suman", "Modi", "Sah"],
-                    series: [this.props.num, this.props.num1, this.props.num2, this.props.num3, this.props.num4],
+                    series: [props.numb1, props.numb2, props.numb3,
+                      props.numb4, props.numb5],
                   }}
                   type="Pie"
                 />
@@ -38,7 +34,7 @@ class Pie extends React.Component {
       </>
     );
   }
-}
+
 
 
 export default Pie;

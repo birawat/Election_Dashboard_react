@@ -6,12 +6,8 @@ import {
   Col,
 } from "react-bootstrap";
 
-class Grid extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
+const Grid = (props) => {
+     
     return (
       <>
         <Col md="12">
@@ -31,45 +27,45 @@ class Grid extends React.Component {
                 <tbody>
                   <tr>
                     <>
-                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={this.props.inc}></i></button>
-                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={this.props.dec}></i></button>
+                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={props.inc1}></i></button>
+                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={props.dec1}></i></button>
                     </>
                     <td>Binod Rawat</td>
-                    <td>{this.props.num}</td>
+                    <td>{props.numb1}</td>
                   </tr>
                   <tr>
                     <>
-                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={this.props.inc1}></i></button>
-                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={this.props.dec1}></i></button>
+                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={props.inc2}></i></button>
+                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={props.dec2}></i></button>
                     </>
                     <td>Amit kumar chaurasia</td>
-                    <td>{this.props.num1}</td>
+                    <td>{props.numb2}</td>
                   </tr>
                   <tr>
                     <>
-                      <button> <i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={this.props.inc2}></i></button>
-                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={this.props.dec2}></i></button>
+                      <button> <i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={props.inc3}></i></button>
+                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={props.dec3}></i></button>
                     </>
                     <td>Suman Sourav</td>
-                    <td>{this.props.num2}</td>
+                    <td>{props.numb3}</td>
 
                   </tr>
                   <tr>
                     <>
-                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={this.props.inc3}></i></button>
-                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={this.props.dec3}></i></button>
+                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={props.inc4}></i></button>
+                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={props.dec4}></i></button>
                     </>
                     <td>Narendra Modi</td>
-                    <td>{this.props.num3}</td>
+                    <td>{props.numb4}</td>
 
                   </tr>
                   <tr>
                     <>
-                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={this.props.inc4}></i></button>
-                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={this.props.dec4}></i></button>
+                      <button><i class="fa fa-thumbs-up text-info" aria-hidden="true" onClick={props.inc5}></i></button>
+                      <button><i class="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={props.dec5}></i></button>
                     </>
                     <td>Amit Sah</td>
-                    <td>{this.props.num4}</td>
+                    <td>{props.numb5}</td>
 
                   </tr>
                 </tbody>
@@ -81,5 +77,4 @@ class Grid extends React.Component {
       </>
     );
   }
-}
 export default Grid;

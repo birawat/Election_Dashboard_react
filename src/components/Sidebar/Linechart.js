@@ -6,12 +6,7 @@ import {
     Col,
 } from "react-bootstrap";
 
-class Line extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-    render() {
+const Line = (props) => {
         return (
             <Col md="12">
                 <Card>
@@ -30,15 +25,15 @@ class Line extends React.Component {
                                         "Sah"
                                     ],
                                     series: [
-                                        [this.props.num, this.props.num1, this.props.num2,
-                                        this.props.num3, this.props.num4],
+                                        [props.numb1, props.numb2, props.numb3,
+                                        props.numb4, props.numb5],
                                     ],
 
                                 }}
                                 type="Line"
                                 options={{
                                     low: 0,
-                                    high: 200,
+                                    high: 100,
                                     showArea: false,
                                     height: "245px",
                                     axisX: {
@@ -70,7 +65,6 @@ class Line extends React.Component {
                 </Card>
             </Col>
         );
-    }
 }
 
 export default Line;

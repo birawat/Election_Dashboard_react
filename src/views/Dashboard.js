@@ -1,99 +1,85 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Grid from "components/Sidebar/grid.js";
 import Pie from "components/Sidebar/piechart.js";
 import Line from "components/Sidebar/Linechart.js";
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clicks: 50,
-      clicks1: 50,
-      clicks2: 50,
-      clicks3: 50,
-      clicks4: 50,
+const Dashboard = () => {
+  const [num, setNum] = useState(50);
+
+    const incNum = () => {
+      setNum(num + 1);
     };
-  }
-  onChange(event) {
-    this.setState({ value: event.target.value })
-  }
-  IncrementItem = () => {
-    this.setState({ clicks: this.state.clicks + 1 });
-  }
-  DecreaseItem = () => {
-    if (this.state.clicks < 20) {
-      this.setState({
-        clicks: 20
-      });
-    } else {
-      this.setState({ clicks: this.state.clicks - 1 });
-    }
-  }
-  IncrementItem1 = () => {
-    this.setState({ clicks1: this.state.clicks1 + 1 });
-  }
-  DecreaseItem1 = () => {
-    if (this.state.clicks1 < 20) {
-      this.setState({
-        clicks1: 20
-      });
-    } else {
-      this.setState({ clicks1: this.state.clicks1 - 1 });
-    }
-  }
-  IncrementItem2 = () => {
-    this.setState({ clicks2: this.state.clicks2 + 1 });
-  }
-  DecreaseItem2 = () => {
-    if (this.state.clicks2 < 20) {
-      this.setState({
-        clicks2: 20
-      });
-    } else {
-      this.setState({ clicks2: this.state.clicks2 - 1 });
-    }
-  }
-  IncrementItem3 = () => {
-    this.setState({ clicks3: this.state.clicks3 + 1 });
-  }
-  DecreaseItem3 = () => {
-    if (this.state.clicks3 < 20) {
-      this.setState({
-        clicks3: 20
-      });
-    } else {
-      this.setState({ clicks3: this.state.clicks3 - 1 });
-    }
-  }
-  IncrementItem4 = () => {
-    this.setState({ clicks4: this.state.clicks4 + 1 });
-  }
-  DecreaseItem4 = () => {
-    if (this.state.clicks4 < 20) {
-      this.setState({
-        clicks4: 20
-      });
-    } else {
-      this.setState({ clicks4: this.state.clicks4 - 1 });
-    }
-  }
-  render() {
+    const decNum = () => {
+      if(num > 20) {
+        setNum(num - 1);
+      }else {
+        setNum(20);
+      }
+    };
+    const [num1 ,setNum1] = useState(50);
+    const incNum1 = () => {
+      setNum1(num1 + 1);
+    };
+    const decNum1 = () => {
+      if(num1 >20){
+        setNum1(num1 - 1);
+      }else{
+        
+        setNum1(20);
+      }
+    };
+    const [num2 ,setNum2] = useState(50);
+    const incNum2 = () => {
+      setNum2(num2 + 1);
+    };
+    const decNum2 = () => {
+      if(num2 >20){
+        setNum2(num2 - 1);
+      }else{
+        
+        setNum2(20);
+      }
+    };
+    const [num3 ,setNum3] = useState(50);
+    const incNum3 = () => {
+      setNum3(num3 + 1);
+    };
+    const decNum3 = () => {
+      if(num3 >20){
+        setNum3(num3 - 1);
+      }else{
+        
+        setNum3(20);
+      }
+    };
+    const [num4 ,setNum4] = useState(50);
+    const incNum4 = () => {
+      setNum4(num4 + 1);
+    };
+    const decNum4 = () => {
+      if(num4 >20){
+        setNum4(num4 - 1);
+      }else{
+        setNum4(20);
+      }
+    };
     return (
       <div>
-        <Grid num={this.state.clicks} inc={this.IncrementItem} dec={this.DecreaseItem}
-          num1={this.state.clicks1} inc1={this.IncrementItem1} dec1={this.DecreaseItem1}
-          num2={this.state.clicks2} inc2={this.IncrementItem2} dec2={this.DecreaseItem2}
-          num3={this.state.clicks3} inc3={this.IncrementItem3} dec3={this.DecreaseItem3}
-          num4={this.state.clicks4} inc4={this.IncrementItem4} dec4={this.DecreaseItem4}
+        <Grid numb1={num} inc1={incNum} dec1={decNum}
+              numb2={num1} inc2={incNum1} dec2={decNum1}
+              numb3={num2} inc3={incNum2} dec3={decNum2}
+              numb4={num3} inc4={incNum3} dec4={decNum3}
+              numb5={num4} inc5={incNum4} dec5={decNum4}
         />
-        <Line num={this.state.clicks} num1={this.state.clicks1}
-          num2={this.state.clicks2} num3={this.state.clicks3} num4={this.state.clicks4} />
-        <Pie num={this.state.clicks} num1={this.state.clicks1}
-          num2={this.state.clicks2} num3={this.state.clicks3} num4={this.state.clicks4} />
+        <Line numb1={num} numb2={num1}
+           numb3={num2} numb4={num3} 
+           numb5={num4} />
+        <Pie numb1={num} numb2={num1}
+           numb3={num2} numb4={num3} 
+           numb5={num4} />
       </div>
     );
   }
-}
 
-export default App;
+export default Dashboard;
