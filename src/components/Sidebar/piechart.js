@@ -9,7 +9,6 @@ import {
 const Pie = (props) => {
     return (
       <>
-        <Col md="4">
           <Card>
             <Card.Header>
               <Card.Title as="h4">Election Pie Chart</Card.Title>
@@ -30,7 +29,6 @@ const Pie = (props) => {
               </div>
             </Card.Body>
           </Card>
-        </Col>
       </>
     );
   }

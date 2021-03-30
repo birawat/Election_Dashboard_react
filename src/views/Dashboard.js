@@ -3,7 +3,6 @@ import Grid from "components/Sidebar/grid.js";
 import Pie from "components/Sidebar/piechart.js";
 import Line from "components/Sidebar/Linechart.js";
 
-
 const Dashboard = () => {
   const [num, setNum] = useState(50);
 
@@ -66,18 +65,27 @@ const Dashboard = () => {
     };
     return (
       <div>
-        <Grid numb1={num} inc1={incNum} dec1={decNum}
-              numb2={num1} inc2={incNum1} dec2={decNum1}
-              numb3={num2} inc3={incNum2} dec3={decNum2}
-              numb4={num3} inc4={incNum3} dec4={decNum3}
-              numb5={num4} inc5={incNum4} dec5={decNum4}
-        />
-        <Line numb1={num} numb2={num1}
-           numb3={num2} numb4={num3} 
-           numb5={num4} />
-        <Pie numb1={num} numb2={num1}
-           numb3={num2} numb4={num3} 
-           numb5={num4} />
+        <div className="row">
+          <Grid numb1={num} inc1={incNum} dec1={decNum}
+                numb2={num1} inc2={incNum1} dec2={decNum1}
+                numb3={num2} inc3={incNum2} dec3={decNum2}
+                numb4={num3} inc4={incNum3} dec4={decNum3}
+                numb5={num4} inc5={incNum4} dec5={decNum4}
+          />
+        </div>
+        <div className='row'>
+          <div className="col-md-8">
+          <Line numb1={num} numb2={num1}
+            numb3={num2} numb4={num3} 
+            numb5={num4} />
+          </div>
+          <div className='col-md-4'>
+            <Pie numb1={num} numb2={num1}
+              numb3={num2} numb4={num3} 
+              numb5={num4} />
+          </div>
+        </div>
+        
       </div>
     );
   }

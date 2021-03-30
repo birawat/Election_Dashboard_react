@@ -8,7 +8,7 @@ import {
 
 const Line = (props) => {
         return (
-            <Col md="12">
+            
                 <Card>
                     <Card.Header>
                         <Card.Title as="h4">Election Line Chart</Card.Title>
@@ -33,8 +33,8 @@ const Line = (props) => {
                                 type="Line"
                                 options={{
                                     low: 0,
-                                    high: 100,
-                                    showArea: false,
+                                    high: 100,                                   
+                                     showArea: false,
                                     height: "245px",
                                     axisX: {
                                         showGrid: false,
@@ -63,7 +63,6 @@ const Line = (props) => {
                         </div>
                     </Card.Body>
                 </Card>
-            </Col>
         );
 }
 
