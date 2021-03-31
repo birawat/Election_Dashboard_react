@@ -2,7 +2,7 @@
 import React from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
 
-import Sidebar from "components/Sidebar/Sidebar";
+import Sidebar from "components/Sidebar";
 
 import routes from "routes.js";
 
