@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import React from "react";
 import { connect } from 'react-redux';
 import { incrementCount, decrementCount} from '../redux/actions/actions';
 import {
@@ -32,16 +32,16 @@ class Home extends React.Component {
                 </thead>
                 <tbody>
                     {
-                    this.props.employees.map((item, i) => {
+                    this.props.employees.map((item) => {
                         return(
                         <tr key={item.id}>
                           
                             <>
-                            <button><i className="fa fa-thumbs-up text-info" aria-hidden="true" onClick={() => this.props.incrementCount(item.name)} ></i></button>
-                            <button><i className="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={() => this.props.decrementCount(i)} ></i></button>
+                            <button><i className="fa fa-thumbs-up text-info" aria-hidden="true" onClick={() => this.props.onIncrement(item.name)} ></i></button>
+                            <button><i className="fa fa-thumbs-down text-danger" aria-hidden="true" onClick={() => this.props.onDecrement(item.name)} ></i></button>
                             </>
                             <td>{item.name}</td>
-                            <td>{item.score}</td>
+                            <td>{this.props.stateVal[item.name].score}</td>
                         </tr>
                         );
                     })
@@ -57,17 +57,25 @@ class Home extends React.Component {
 
  const mapStateToProps = state => {
       
-      return {employees : [{ id: 1, name: 'Binod', score: 0 },
-      { id: 2, name: 'Amit', score: 0 },
-      { id: 3, name: 'Suman', score: 0 },
-      { id: 4, name: 'Modi', score: 50 },
-      { id:5, name: 'Sah', score: 0}]};
+      return {employees : [{ id: 1, name: 'Binod', score: 30 },
+      { id: 2, name: 'Amit', score: 30 },
+      { id: 3, name: 'Suman', score: 30 },
+      { id: 4, name: 'Modi', score: 30 },
+      { id:5, name: 'Sah', score: 30}],
+
+      stateVal: state
+
+    };
   }
   
-  const mapDispatchToProps = () => {
+  const mapDispatchToProps = (dispatch) => {
     return {
-      incrementCount,
-      decrementCount
+      onIncrement: (name) => {
+        dispatch(incrementCount(name))
+      },
+      onDecrement: (name) => {
+        dispatch(decrementCount(name))
+      },
     }
   }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

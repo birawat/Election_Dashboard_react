@@ -1,5 +1,6 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
+import { connect } from 'react-redux';
 
 import {
   Card,
@@ -7,6 +8,23 @@ import {
 } from "react-bootstrap";
 
 const Pie = (props) => {
+    const getGraphSeries = (obj , key) => {
+        let scoreArr = []
+        for (key in obj) {
+            scoreArr.push(obj[key].score);
+        }
+
+        return scoreArr;
+    }
+
+    const getLabels = (obj , key) => {
+        let labelArr = []
+        for (key in obj) {
+            labelArr.push(key);
+        }
+
+        return labelArr;
+    }
     return (
       <>
           <Card>
@@ -20,9 +38,8 @@ const Pie = (props) => {
               >
                 <ChartistGraph
                   data={{
-                    labels: ["Binod", "Amit", "Suman", "Modi", "Sah"],
-                    series: [props.numb1, props.numb2, props.numb3,
-                      props.numb4, props.numb5],
+                    labels: getLabels(props.stateVal),
+                    series: getGraphSeries(props.stateVal),
                   }}
                   type="Pie"
                 />
@@ -34,5 +51,11 @@ const Pie = (props) => {
   }
 
 
+  const mapStateToProps = state => {
+      
+    return {
+    stateVal: state
 
-export default Pie;
+  };
+}
+export default connect(mapStateToProps, null)(Pie);

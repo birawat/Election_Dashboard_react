@@ -10,10 +10,11 @@ import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import AdminLayout from "layouts/Admin.js";
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 import rootReducer from '../src/redux/reducers';
 import { Provider } from "react-redux";
+import AdminLayout from "layouts/Admin";
+
 
 const store = createStore(rootReducer);
 
