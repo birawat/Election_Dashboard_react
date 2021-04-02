@@ -18,6 +18,7 @@ const postReducer = (state = initialState, action) => {
         case INCREMENT:
             let key = action.payload.name;
             state[key].score += 1;
+            
             return {
                 ...state
             };
@@ -26,7 +27,9 @@ const postReducer = (state = initialState, action) => {
             case DECREMENT:
                 
                 let key1 = action.payload.name;
+                if(state[key1].score>30){
                 state[key1].score -= 1;
+                }
                 return {
                     ...state
                 };
